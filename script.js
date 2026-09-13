@@ -61,20 +61,34 @@ const syncLegacyPickupPhone = () => {
 syncLegacyPickupPhone();
 
 if (fillPickupContactNameBtn && fullNameInput && pickupContactNameInput) {
-  fillPickupContactNameBtn.addEventListener("click", () => {
-    pickupContactNameInput.value = fullNameInput.value.trim();
-    if (quickFillStatus) {
-      quickFillStatus.textContent = "Pickup contact filled from your name.";
+  fillPickupContactNameBtn.addEventListener("change", () => {
+    if (fillPickupContactNameBtn.checked) {
+      pickupContactNameInput.value = fullNameInput.value.trim();
+      if (quickFillStatus) {
+        quickFillStatus.textContent = "Pickup contact filled from your name.";
+      }
+    } else {
+      pickupContactNameInput.value = "";
+      if (quickFillStatus) {
+        quickFillStatus.textContent = "Pickup contact name cleared.";
+      }
     }
     updateWhatsappLinks();
   });
 }
 
 if (fillPickupContactNumberBtn && phoneInput && pickupContactNumberInput) {
-  fillPickupContactNumberBtn.addEventListener("click", () => {
-    pickupContactNumberInput.value = phoneInput.value.trim();
-    if (quickFillStatus) {
-      quickFillStatus.textContent = "Pickup phone filled from your phone.";
+  fillPickupContactNumberBtn.addEventListener("change", () => {
+    if (fillPickupContactNumberBtn.checked) {
+      pickupContactNumberInput.value = phoneInput.value.trim();
+      if (quickFillStatus) {
+        quickFillStatus.textContent = "Pickup phone filled from your phone.";
+      }
+    } else {
+      pickupContactNumberInput.value = "";
+      if (quickFillStatus) {
+        quickFillStatus.textContent = "Pickup phone cleared.";
+      }
     }
     syncLegacyPickupPhone();
     updateWhatsappLinks();
