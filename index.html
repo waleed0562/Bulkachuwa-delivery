@@ -183,7 +183,7 @@
 
                 <div class="quick-fill-field">
                   <div class="quick-fill-header">
-                    <label for="pickupContactNumber">Pickup phone</label>
+                    <label for="pickupAddressPhone">Pickup phone</label>
                     <button
                       type="button"
                       class="btn btn-quick-fill"
@@ -194,8 +194,8 @@
                   </div>
                   <input
                     type="tel"
-                    name="pickupContactNumber"
-                    id="pickupContactNumber"
+                    name="pickupAddressPhone"
+                    id="pickupAddressPhone"
                     placeholder="If different from customer"
                     required
                   />
@@ -281,6 +281,7 @@
               </div>
             </div>
             <input type="hidden" name="service" value="Gidan Sauki Delivery" />
+            <input type="hidden" name="pickupContactNumber" id="pickupContactNumberMirror" />
             <input
               type="hidden"
               name="_subject"

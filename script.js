@@ -9,7 +9,7 @@ const getFieldValue = (name) => {
 };
 
 const buildMessageTemplate = () => {
-  return `Hello Gidan Sauki Delivery, I'd like to request a pickup.\n\nCUSTOMER\nFull name: ${getFieldValue("fullName")}\nPhone: ${getFieldValue("phone")}\n\nPICKUP\nPickup address: ${getFieldValue("pickupAddress")}\nPickup contact: ${getFieldValue("pickupContactName")}\nPickup phone: ${getFieldValue("pickupContactNumber")}\n\nDROPOFF\nDropoff address: ${getFieldValue("deliveryAddress")}\nDropoff contact: ${getFieldValue("deliveryContactName")}\nDropoff phone: ${getFieldValue("deliveryContactNumber")}\nLandmark / directions: ${getFieldValue("deliveryInstructions")}\n\nPACKAGE\nItem type: ${getFieldValue("itemType")}\nTiming: ${getFieldValue("preferredTime")}\nExtra note: ${getFieldValue("notes")}`;
+  return `Hello Gidan Sauki Delivery, I'd like to request a pickup.\n\nCUSTOMER\nFull name: ${getFieldValue("fullName")}\nPhone: ${getFieldValue("phone")}\n\nPICKUP\nPickup address: ${getFieldValue("pickupAddress")}\nPickup contact: ${getFieldValue("pickupContactName")}\nPickup phone: ${getFieldValue("pickupAddressPhone")}\n\nDROPOFF\nDropoff address: ${getFieldValue("deliveryAddress")}\nDropoff contact: ${getFieldValue("deliveryContactName")}\nDropoff phone: ${getFieldValue("deliveryContactNumber")}\nLandmark / directions: ${getFieldValue("deliveryInstructions")}\n\nPACKAGE\nItem type: ${getFieldValue("itemType")}\nTiming: ${getFieldValue("preferredTime")}\nExtra note: ${getFieldValue("notes")}`;
 };
 
 const whatsappLink = document.getElementById("whatsapp-link");
@@ -46,10 +46,19 @@ if (deliveryForm) {
 const fullNameInput = document.getElementById("fullName");
 const phoneInput = document.getElementById("phone");
 const pickupContactNameInput = document.getElementById("pickupContactName");
-const pickupContactNumberInput = document.getElementById("pickupContactNumber");
+const pickupContactNumberInput = document.getElementById("pickupAddressPhone");
 const fillPickupContactNameBtn = document.getElementById("fillPickupContactNameBtn");
 const fillPickupContactNumberBtn = document.getElementById("fillPickupContactNumberBtn");
 const quickFillStatus = document.getElementById("quickFillStatus");
+const pickupContactNumberMirrorInput = document.getElementById("pickupContactNumberMirror");
+
+const syncLegacyPickupPhone = () => {
+  if (pickupContactNumberMirrorInput && pickupContactNumberInput) {
+    pickupContactNumberMirrorInput.value = pickupContactNumberInput.value.trim();
+  }
+};
+
+syncLegacyPickupPhone();
 
 if (fillPickupContactNameBtn && fullNameInput && pickupContactNameInput) {
   fillPickupContactNameBtn.addEventListener("click", () => {
@@ -67,6 +76,12 @@ if (fillPickupContactNumberBtn && phoneInput && pickupContactNumberInput) {
     if (quickFillStatus) {
       quickFillStatus.textContent = "Pickup phone filled from your phone.";
     }
+    syncLegacyPickupPhone();
     updateWhatsappLinks();
   });
+}
+
+if (pickupContactNumberInput) {
+  pickupContactNumberInput.addEventListener("input", syncLegacyPickupPhone);
+  pickupContactNumberInput.addEventListener("change", syncLegacyPickupPhone);
 }
