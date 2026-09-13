@@ -187,7 +187,10 @@ input::placeholder, textarea::placeholder { color: #71717a; }
   .btn { width: 100%; }
   .hero-actions { flex-direction: column; }
   form { padding: 16px; }
-  .quick-fill-header { align-items: flex-start; }
-  .quick-fill-header .btn-quick-fill { width: auto; }
+  .quick-fill-header { align-items: stretch; }
+  .quick-fill-header .btn-quick-fill {
+    width: 100%;
+    justify-content: center;
+  }
   .footer-bottom { min-height: auto; padding: 14px 0 18px; }
 }
