@@ -75,6 +75,36 @@ form { padding: 20px; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; color: #e4e4e7; }
 
+.form-section {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #111318;
+}
+.section-title { margin: 0; font-size: 1rem; color: #86efac; }
+.field-help { color: var(--muted); font-size: .82rem; font-weight: 500; }
+
+.quick-fill-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-quick-fill {
+  border: 1px solid #2f6f47;
+  background: #1f2937;
+  color: #dcfce7;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: .82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-quick-fill:hover { border-color: #4ade80; }
+
 input, select, textarea {
   width: 100%; border: 1px solid var(--border); border-radius: 10px;
   padding: 12px 13px; font: inherit; color: var(--text); background: var(--surface-soft);
@@ -131,5 +161,7 @@ input::placeholder, textarea::placeholder { color: #71717a; }
   .btn { width: 100%; }
   .hero-actions { flex-direction: column; }
   form { padding: 16px; }
+  .quick-fill-row { grid-template-columns: 1fr; }
+  .btn-quick-fill { width: 100%; }
   .footer-bottom { min-height: auto; padding: 14px 0 18px; }
 }
