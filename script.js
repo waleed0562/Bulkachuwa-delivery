@@ -50,11 +50,11 @@ const pickupContactNumberInput = document.getElementById("pickupContactNumber");
 const fillPickupContactNameBtn = document.getElementById("fillPickupContactNameBtn");
 const fillPickupContactNumberBtn = document.getElementById("fillPickupContactNumberBtn");
 const quickFillStatus = document.getElementById("quickFillStatus");
-const pickupAddressPhoneLegacyInput = document.getElementById("pickupAddressPhoneLegacy");
+const pickupContactNumberMirrorInput = document.getElementById("pickupContactNumberMirror");
 
 const syncLegacyPickupPhone = () => {
-  if (pickupAddressPhoneLegacyInput && pickupContactNumberInput) {
-    pickupAddressPhoneLegacyInput.value = pickupContactNumberInput.value.trim();
+  if (pickupContactNumberMirrorInput && pickupContactNumberInput) {
+    pickupContactNumberMirrorInput.value = pickupContactNumberInput.value.trim();
   }
 };
 
