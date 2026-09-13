@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gidan Sauki Delivery | Fast Pickup & Delivery</title>
+    <meta
+      name="description"
+      content="Gidan Sauki Delivery - Request pickup and delivery easily. Fast, safe and reliable local delivery service."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-dot" aria-hidden="true"></div>
+          <span>Gidan Sauki Delivery</span>
+        </div>
+        <a class="btn btn-whatsapp" id="header-whatsapp-btn" href="#whatsapp" aria-label="Chat on WhatsApp">
+          WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Fast • Safe • Reliable</p>
+            <h1>Reliable Pickup & Delivery — Gidan Sauki Delivery</h1>
+            <p class="lead">
+              Send packages, food, documents, and more. Request a delivery in
+              minutes.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#request-form">Request Delivery</a>
+              <a class="btn btn-whatsapp" id="hero-whatsapp-btn" href="#whatsapp">Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="hero-card" aria-hidden="true">
+            <h3>How it works</h3>
+            <ol>
+              <li>Fill the request form or message us on WhatsApp</li>
+              <li>We pick up your item quickly</li>
+              <li>We deliver safely to the destination</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted">
+        <div class="container">
+          <h2>Why choose us?</h2>
+          <div class="features">
+            <article class="feature-card">
+              <h3>Same-day delivery</h3>
+              <p>Quick local delivery when you need it most.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Affordable pricing</h3>
+              <p>Transparent, budget-friendly rates.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Live WhatsApp support</h3>
+              <p>Easy communication and fast response.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Safe handling</h3>
+              <p>Your package is handled with care.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="request-form">
+        <div class="container form-wrap">
+          <div>
+            <h2>Request Delivery</h2>
+            <p>
+              Fill the form below and submit. We’ll receive it by email and contact you.
+            </p>
+            <p class="small-note">
+              <strong>Setup note:</strong> Replace <code>YOUR_FORMSPREE_ID</code> in
+              <code>index.html</code> with your Formspree form ID.
+            </p>
+          </div>
+
+          <form
+            id="delivery-form"
+            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            method="POST"
+          >
+            <div class="grid">
+              <label>
+                Full Name
+                <input type="text" name="fullName" required />
+              </label>
+
+              <label>
+                Phone Number
+                <input type="tel" name="phone" required />
+              </label>
+
+              <label>
+                Pickup Address
+                <input type="text" name="pickupAddress" required />
+              </label>
+
+              <label>
+                Delivery Address
+                <input type="text" name="deliveryAddress" required />
+              </label>
+
+              <label>
+                Item Type
+                <input type="text" name="itemType" placeholder="e.g. Food, Document, Package" required />
+              </label>
+
+              <label>
+                Preferred Time
+                <select name="preferredTime" required>
+                  <option value="">Select one</option>
+                  <option value="ASAP">ASAP</option>
+                  <option value="Scheduled">Scheduled</option>
+                </select>
+              </label>
+
+              <label class="full-width">
+                Additional Notes
+                <textarea name="notes" rows="4" placeholder="Any extra details..."></textarea>
+              </label>
+            </div>
+
+            <input type="hidden" name="service" value="Gidan Sauki Delivery" />
+            <input type="hidden" name="_subject" value="New Delivery Request - Gidan Sauki Delivery" />
+
+            <button class="btn btn-primary" type="submit">Submit Request</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section muted" id="whatsapp">
+        <div class="container whatsapp-box">
+          <h2>Prefer WhatsApp?</h2>
+          <p>
+            Tap the button below to open WhatsApp with a pre-typed delivery request template.
+          </p>
+          <a class="btn btn-whatsapp btn-large" id="whatsapp-link" href="#" rel="noopener noreferrer">
+            Open WhatsApp
+          </a>
+          <p class="small-note">
+            <strong>Setup note:</strong> Replace <code>2348000000000</code> in
+            <code>script.js</code> with your real WhatsApp number.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> Gidan Sauki Delivery</p>
+        <p>Service hours: Mon - Sat, 8:00 AM - 7:00 PM</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
