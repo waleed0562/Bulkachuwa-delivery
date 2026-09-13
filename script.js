@@ -16,18 +16,6 @@ const whatsappLink = document.getElementById("whatsapp-link");
 const heroWhatsappBtn = document.getElementById("hero-whatsapp-btn");
 const headerWhatsappBtn = document.getElementById("header-whatsapp-btn");
 
-if (whatsappLink) {
-  whatsappLink.href = "#";
-}
-
-if (heroWhatsappBtn) {
-  heroWhatsappBtn.href = "#";
-}
-
-if (headerWhatsappBtn) {
-  headerWhatsappBtn.href = "#";
-}
-
 const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
@@ -62,6 +50,15 @@ const pickupContactNumberInput = document.getElementById("pickupContactNumber");
 const fillPickupContactNameBtn = document.getElementById("fillPickupContactNameBtn");
 const fillPickupContactNumberBtn = document.getElementById("fillPickupContactNumberBtn");
 const quickFillStatus = document.getElementById("quickFillStatus");
+const pickupAddressPhoneLegacyInput = document.getElementById("pickupAddressPhoneLegacy");
+
+const syncLegacyPickupPhone = () => {
+  if (pickupAddressPhoneLegacyInput && pickupContactNumberInput) {
+    pickupAddressPhoneLegacyInput.value = pickupContactNumberInput.value.trim();
+  }
+};
+
+syncLegacyPickupPhone();
 
 if (fillPickupContactNameBtn && fullNameInput && pickupContactNameInput) {
   fillPickupContactNameBtn.addEventListener("click", () => {
@@ -79,6 +76,12 @@ if (fillPickupContactNumberBtn && phoneInput && pickupContactNumberInput) {
     if (quickFillStatus) {
       quickFillStatus.textContent = "Pickup contact number filled from phone number.";
     }
+    syncLegacyPickupPhone();
     updateWhatsappLinks();
   });
+}
+
+if (pickupContactNumberInput) {
+  pickupContactNumberInput.addEventListener("input", syncLegacyPickupPhone);
+  pickupContactNumberInput.addEventListener("change", syncLegacyPickupPhone);
 }
