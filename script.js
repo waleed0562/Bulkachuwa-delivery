@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "2348000000000"; // Replace with real WhatsApp number (country code + number, no + sign)
+const WHATSAPP_NUMBER = "2348146107740";
 
 const messageTemplate = `Hello Gidan Sauki Delivery, I want to request a pickup.\n\nName:\nPhone Number:\nPickup Address:\nDelivery Address:\nItem Type:\nPreferred Time (ASAP/Scheduled):\nAdditional Notes:`;
 
