@@ -112,8 +112,8 @@
           <div>
             <h2>Request Delivery</h2>
             <p>
-              Fill the form below and submit. We’ll receive it by email and
-              contact you shortly.
+              Share the details below. We’ll receive it instantly and confirm
+              shortly.
             </p>
           </div>
 
@@ -124,87 +124,134 @@
           >
             <div class="grid">
               <div class="form-section full-width">
-                <h3 class="section-title">Section 1: Customer Details</h3>
+                <h3 class="section-title">Customer</h3>
                 <label>
-                  1. Full Name
-                  <input type="text" name="fullName" id="fullName" required />
+                  Full name
+                  <input
+                    type="text"
+                    name="fullName"
+                    id="fullName"
+                    placeholder="Your full name"
+                    required
+                  />
                 </label>
 
                 <label>
-                  2. Phone Number
-                  <span class="field-help">Most important for rider to call</span>
-                  <input type="tel" name="phone" id="phone" required />
+                  Phone
+                  <span class="field-help">Best number for rider updates</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="080..."
+                    required
+                  />
                 </label>
               </div>
 
               <div class="form-section full-width">
-                <h3 class="section-title">Section 2: Pickup Details</h3>
+                <h3 class="section-title">Pickup</h3>
 
                 <label>
-                  3. Pickup Address
-                  <input type="text" name="pickupAddress" required />
+                  Pickup address
+                  <input
+                    type="text"
+                    name="pickupAddress"
+                    placeholder="Street, area, landmark"
+                    required
+                  />
                 </label>
 
                 <div class="quick-fill-field">
-                  <label for="pickupContactName">
-                    4. Pickup Contact Name (if different from customer, or tap button to copy)
-                  </label>
-                  <div class="quick-fill-row">
-                    <input type="text" name="pickupContactName" id="pickupContactName" />
-                    <button type="button" class="btn btn-quick-fill" id="fillPickupContactNameBtn">
-                      Same as Full Name
+                  <div class="quick-fill-header">
+                    <label for="pickupContactName">Pickup contact</label>
+                    <button
+                      type="button"
+                      class="btn btn-quick-fill"
+                      id="fillPickupContactNameBtn"
+                    >
+                      Use full name
                     </button>
                   </div>
+                  <input
+                    type="text"
+                    name="pickupContactName"
+                    id="pickupContactName"
+                    placeholder="If different from customer"
+                  />
                 </div>
 
                 <div class="quick-fill-field">
-                  <label for="pickupContactNumber">5. Pickup Contact Number</label>
-                  <div class="quick-fill-row">
-                    <input type="tel" name="pickupAddressPhone" id="pickupContactNumber" required />
-                    <button type="button" class="btn btn-quick-fill" id="fillPickupContactNumberBtn">
-                      Same as Phone Number
+                  <div class="quick-fill-header">
+                    <label for="pickupContactNumber">Pickup phone</label>
+                    <button
+                      type="button"
+                      class="btn btn-quick-fill"
+                      id="fillPickupContactNumberBtn"
+                    >
+                      Use customer phone
                     </button>
                   </div>
+                  <input
+                    type="tel"
+                    name="pickupAddressPhone"
+                    id="pickupContactNumber"
+                    placeholder="If different from customer"
+                    required
+                  />
                 </div>
 
                 <p id="quickFillStatus" class="sr-only" aria-live="polite"></p>
               </div>
 
               <div class="form-section full-width">
-                <h3 class="section-title">Section 3: Delivery Details</h3>
+                <h3 class="section-title">Dropoff</h3>
 
                 <label>
-                  6. Delivery Address
-                  <input type="text" name="deliveryAddress" required />
+                  Dropoff address
+                  <input
+                    type="text"
+                    name="deliveryAddress"
+                    placeholder="Street, area, landmark"
+                    required
+                  />
                 </label>
 
                 <label>
-                  7. Delivery Contact Name
-                  <input type="text" name="deliveryContactName" />
+                  Dropoff contact
+                  <input
+                    type="text"
+                    name="deliveryContactName"
+                    placeholder="Recipient name"
+                  />
                 </label>
 
                 <label>
-                  8. Delivery Contact Number
-                  <input type="tel" name="deliveryContactNumber" />
+                  Dropoff phone
+                  <input
+                    type="tel"
+                    name="deliveryContactNumber"
+                    placeholder="Recipient phone"
+                  />
                 </label>
 
                 <label>
-                  9. Delivery Instructions / Landmark
+                  Landmark / directions
                   <textarea
                     name="deliveryInstructions"
                     rows="3"
-                    placeholder='Blue gate opposite ECWA church'
+                    placeholder="Blue gate opposite ECWA Church"
                   ></textarea>
                 </label>
               </div>
 
               <div class="form-section full-width">
-                <h3 class="section-title">Section 4: Package Details</h3>
+                <h3 class="section-title">Package</h3>
 
                 <label>
-                  10. What are we picking up?
+                  Item type
                   <select name="itemType" required>
-                    <option value="">Select one</option>
+                    <option value="">Select item type</option>
                     <option value="Food">Food</option>
                     <option value="Parcel">Parcel</option>
                     <option value="Groceries">Groceries</option>
@@ -214,20 +261,21 @@
                 </label>
 
                 <label>
-                  Preferred Time
+                  Timing
                   <select name="preferredTime" id="preferredTime" required>
-                    <option value="">Select one</option>
+                    <option value="">Select timing</option>
                     <option value="ASAP">ASAP</option>
                     <option value="Scheduled">Scheduled</option>
                   </select>
                 </label>
 
                 <label>
-                  11. Any special note
+                  Extra note
+                  <span class="field-help">Optional: fragile, chilled, call first.</span>
                   <textarea
                     name="notes"
                     rows="4"
-                    placeholder='Fragile, Keep cold, Call before arrival'
+                    placeholder="Fragile, keep chilled, call first"
                   ></textarea>
                 </label>
               </div>
@@ -241,7 +289,7 @@
               value="New Delivery Request - Gidan Sauki Delivery"
             />
 
-            <button class="btn btn-primary" type="submit">Submit Request</button>
+            <button class="btn btn-primary" type="submit">Send Request</button>
           </form>
         </div>
       </section>

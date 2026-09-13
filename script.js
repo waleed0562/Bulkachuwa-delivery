@@ -9,7 +9,7 @@ const getFieldValue = (name) => {
 };
 
 const buildMessageTemplate = () => {
-  return `Hello Gidan Sauki Delivery, I want to request a pickup.\n\nSECTION 1: CUSTOMER DETAILS\nFull Name: ${getFieldValue("fullName")}\nPhone Number: ${getFieldValue("phone")}\n\nSECTION 2: PICKUP DETAILS\nPickup Address: ${getFieldValue("pickupAddress")}\nPickup Contact Name: ${getFieldValue("pickupContactName")}\nPickup Contact Number: ${getFieldValue("pickupContactNumber")}\n\nSECTION 3: DELIVERY DETAILS\nDelivery Address: ${getFieldValue("deliveryAddress")}\nDelivery Contact Name: ${getFieldValue("deliveryContactName")}\nDelivery Contact Number: ${getFieldValue("deliveryContactNumber")}\nDelivery Instructions / Landmark: ${getFieldValue("deliveryInstructions")}\n\nSECTION 4: PACKAGE DETAILS\nWhat are we picking up?: ${getFieldValue("itemType")}\nPreferred Time (ASAP/Scheduled): ${getFieldValue("preferredTime")}\nAny special note: ${getFieldValue("notes")}`;
+  return `Hello Gidan Sauki Delivery, I’d like to request a pickup.\n\nCUSTOMER\nFull name: ${getFieldValue("fullName")}\nPhone: ${getFieldValue("phone")}\n\nPICKUP\nPickup address: ${getFieldValue("pickupAddress")}\nPickup contact: ${getFieldValue("pickupContactName")}\nPickup phone: ${getFieldValue("pickupContactNumber")}\n\nDROPOFF\nDropoff address: ${getFieldValue("deliveryAddress")}\nDropoff contact: ${getFieldValue("deliveryContactName")}\nDropoff phone: ${getFieldValue("deliveryContactNumber")}\nLandmark / directions: ${getFieldValue("deliveryInstructions")}\n\nPACKAGE\nItem type: ${getFieldValue("itemType")}\nTiming: ${getFieldValue("preferredTime")}\nExtra note: ${getFieldValue("notes")}`;
 };
 
 const whatsappLink = document.getElementById("whatsapp-link");
@@ -64,7 +64,7 @@ if (fillPickupContactNameBtn && fullNameInput && pickupContactNameInput) {
   fillPickupContactNameBtn.addEventListener("click", () => {
     pickupContactNameInput.value = fullNameInput.value.trim();
     if (quickFillStatus) {
-      quickFillStatus.textContent = "Pickup contact name filled from full name.";
+      quickFillStatus.textContent = "Pickup contact filled from your name.";
     }
     updateWhatsappLinks();
   });
@@ -74,7 +74,7 @@ if (fillPickupContactNumberBtn && phoneInput && pickupContactNumberInput) {
   fillPickupContactNumberBtn.addEventListener("click", () => {
     pickupContactNumberInput.value = phoneInput.value.trim();
     if (quickFillStatus) {
-      quickFillStatus.textContent = "Pickup contact number filled from phone number.";
+      quickFillStatus.textContent = "Pickup phone filled from your phone.";
     }
     syncLegacyPickupPhone();
     updateWhatsappLinks();
