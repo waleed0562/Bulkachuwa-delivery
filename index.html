@@ -123,59 +123,118 @@
             method="POST"
           >
             <div class="grid">
-              <label>
-                Full Name
-                <input type="text" name="fullName" required />
-              </label>
+              <div class="form-section full-width">
+                <h3 class="section-title">Section 1: Customer Details</h3>
+                <label>
+                  1. Full Name
+                  <input type="text" name="fullName" id="fullName" required />
+                </label>
 
-              <label>
-                Phone Number
-                <input type="tel" name="phone" required />
-              </label>
+                <label>
+                  2. Phone Number
+                  <span class="field-help">Most important for rider to call</span>
+                  <input type="tel" name="phone" id="phone" required />
+                </label>
+              </div>
 
-              <label>
-                Pickup Address
-                <input type="text" name="pickupAddress" required />
-              </label>
-              <label>
-                Pickup Address Phone Number
-                <input type="tel" name="pickupAddressPhone" required />
-              </label>
-              <label>
-                Delivery Address
-                <input type="text" name="deliveryAddress" required />
-              </label>
+              <div class="form-section full-width">
+                <h3 class="section-title">Section 2: Pickup Details</h3>
 
-              <label>
-                Item Type
-                <input
-                  type="text"
-                  name="itemType"
-                  placeholder="e.g. Food, Document, Package"
-                  required
-                />
-              </label>
+                <label>
+                  3. Pickup Address
+                  <input type="text" name="pickupAddress" required />
+                </label>
 
-              <label>
-                Preferred Time
-                <select name="preferredTime" required>
-                  <option value="">Select one</option>
-                  <option value="ASAP">ASAP</option>
-                  <option value="Scheduled">Scheduled</option>
-                </select>
-              </label>
+                <div class="quick-fill-field">
+                  <label for="pickupContactName">
+                    4. Pickup Contact Name (if different from customer, or tap button to copy)
+                  </label>
+                  <div class="quick-fill-row">
+                    <input type="text" name="pickupContactName" id="pickupContactName" />
+                    <button type="button" class="btn btn-quick-fill" id="fillPickupContactNameBtn">
+                      Same as Full Name
+                    </button>
+                  </div>
+                </div>
 
-              <label class="full-width">
-                Additional Notes
-                <textarea
-                  name="notes"
-                  rows="4"
-                  placeholder="Any extra details..."
-                ></textarea>
-              </label>
+                <div class="quick-fill-field">
+                  <label for="pickupContactNumber">5. Pickup Contact Number</label>
+                  <div class="quick-fill-row">
+                    <input type="tel" name="pickupAddressPhone" id="pickupContactNumber" required />
+                    <button type="button" class="btn btn-quick-fill" id="fillPickupContactNumberBtn">
+                      Same as Phone Number
+                    </button>
+                  </div>
+                </div>
+
+                <p id="quickFillStatus" class="sr-only" aria-live="polite"></p>
+              </div>
+
+              <div class="form-section full-width">
+                <h3 class="section-title">Section 3: Delivery Details</h3>
+
+                <label>
+                  6. Delivery Address
+                  <input type="text" name="deliveryAddress" required />
+                </label>
+
+                <label>
+                  7. Delivery Contact Name
+                  <input type="text" name="deliveryContactName" />
+                </label>
+
+                <label>
+                  8. Delivery Contact Number
+                  <input type="tel" name="deliveryContactNumber" />
+                </label>
+
+                <label>
+                  9. Delivery Instructions / Landmark
+                  <textarea
+                    name="deliveryInstructions"
+                    rows="3"
+                    placeholder='Blue gate opposite ECWA church'
+                  ></textarea>
+                </label>
+              </div>
+
+              <div class="form-section full-width">
+                <h3 class="section-title">Section 4: Package Details</h3>
+
+                <label>
+                  10. What are we picking up?
+                  <select name="itemType" required>
+                    <option value="">Select one</option>
+                    <option value="Food">Food</option>
+                    <option value="Parcel">Parcel</option>
+                    <option value="Groceries">Groceries</option>
+                    <option value="Documents">Documents</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+
+                <label>
+                  Preferred Time
+                  <select name="preferredTime" id="preferredTime" required>
+                    <option value="">Select one</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="Scheduled">Scheduled</option>
+                  </select>
+                </label>
+
+                <label>
+                  11. Any special note
+                  <textarea
+                    name="notes"
+                    rows="4"
+                    placeholder='Fragile, Keep cold, Call before arrival'
+                  ></textarea>
+                </label>
+              </div>
             </div>
 
             <input type="hidden" name="service" value="Gidan Sauki Delivery" />
+            <input type="hidden" name="pickupContactNumber" id="pickupContactNumberMirror" />
             <input
               type="hidden"
               name="_subject"
