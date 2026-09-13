@@ -92,6 +92,7 @@ label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; color: #e4
   align-items: center;
   gap: 8px;
 }
+.quick-fill-field { display: grid; gap: 8px; }
 
 .btn-quick-fill {
   border: 1px solid #2f6f47;

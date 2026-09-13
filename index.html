@@ -145,25 +145,27 @@
                   <input type="text" name="pickupAddress" required />
                 </label>
 
-                <label>
-                  4. Pickup Contact Name (if different from customer)
+                <div class="quick-fill-field">
+                  <label for="pickupContactName">
+                    4. Pickup Contact Name (if different from customer)
+                  </label>
                   <div class="quick-fill-row">
                     <input type="text" name="pickupContactName" id="pickupContactName" />
                     <button type="button" class="btn btn-quick-fill" id="fillPickupContactNameBtn">
                       Same as Full Name
                     </button>
                   </div>
-                </label>
+                </div>
 
-                <label>
-                  5. Pickup Contact Number
+                <div class="quick-fill-field">
+                  <label for="pickupContactNumber">5. Pickup Contact Number</label>
                   <div class="quick-fill-row">
                     <input type="tel" name="pickupContactNumber" id="pickupContactNumber" />
                     <button type="button" class="btn btn-quick-fill" id="fillPickupContactNumberBtn">
                       Same as Phone Number
                     </button>
                   </div>
-                </label>
+                </div>
               </div>
 
               <div class="form-section full-width">
@@ -206,6 +208,15 @@
                     <option value="Groceries">Groceries</option>
                     <option value="Documents">Documents</option>
                     <option value="Other">Other</option>
+                  </select>
+                </label>
+
+                <label>
+                  Preferred Time
+                  <select name="preferredTime" id="preferredTime">
+                    <option value="">Select one (optional)</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="Scheduled">Scheduled</option>
                   </select>
                 </label>
 
