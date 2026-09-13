@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "2348146107740";
 
-const messageTemplate = `Hello Gidan Sauki Delivery, I want to request a pickup.\n\nSECTION 1: CUSTOMER DETAILS\nFull Name:\nPhone Number:\n\nSECTION 2: PICKUP DETAILS\nPickup Address:\nPickup Contact Name:\nPickup Contact Number:\n\nSECTION 3: DELIVERY DETAILS\nDelivery Address:\nDelivery Contact Name:\nDelivery Contact Number:\nDelivery Instructions / Landmark:\n\nSECTION 4: PACKAGE DETAILS\nWhat are we picking up?:\nPreferred Time:\nAny special note:`;
+const messageTemplate = `Hello Gidan Sauki Delivery, I want to request a pickup.\n\nSECTION 1: CUSTOMER DETAILS\nFull Name:\nPhone Number:\n\nSECTION 2: PICKUP DETAILS\nPickup Address:\nPickup Contact Name:\nPickup Contact Number:\n\nSECTION 3: DELIVERY DETAILS\nDelivery Address:\nDelivery Contact Name:\nDelivery Contact Number:\nDelivery Instructions / Landmark:\n\nSECTION 4: PACKAGE DETAILS\nWhat are we picking up?:\nPreferred Time (ASAP/Scheduled):\nAny special note:`;
 
 const encodedMessage = encodeURIComponent(messageTemplate);
 const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
