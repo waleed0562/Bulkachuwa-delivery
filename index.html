@@ -163,35 +163,24 @@
                 </label>
 
                 <div class="quick-fill-field">
-                  <div class="quick-fill-header">
-                    <label for="pickupContactName">Pickup Contact Name</label>
-                    <button
-                      type="button"
-                      class="btn btn-quick-fill"
-                      id="fillPickupContactNameBtn"
-                    >
-                      Use full name
-                    </button>
-                  </div>
+                  <label for="pickupContactName">Pickup Contact Name</label>
                   <input
                     type="text"
                     name="pickupContactName"
                     id="pickupContactName"
                     placeholder="If different from customer"
                   />
+                  <button
+                    type="button"
+                    class="btn-quick-fill"
+                    id="fillPickupContactNameBtn"
+                  >
+                    Use customer name
+                  </button>
                 </div>
 
                 <div class="quick-fill-field">
-                  <div class="quick-fill-header">
-                    <label for="pickupAddressPhone">Pickup phone</label>
-                    <button
-                      type="button"
-                      class="btn btn-quick-fill"
-                      id="fillPickupContactNumberBtn"
-                    >
-                      Use customer phone
-                    </button>
-                  </div>
+                  <label for="pickupAddressPhone">Pickup Contact Number</label>
                   <input
                     type="tel"
                     name="pickupAddressPhone"
@@ -199,6 +188,13 @@
                     placeholder="If different from customer"
                     required
                   />
+                  <button
+                    type="button"
+                    class="btn-quick-fill"
+                    id="fillPickupContactNumberBtn"
+                  >
+                    Use customer phone
+                  </button>
                 </div>
 
                 <p id="quickFillStatus" class="sr-only" aria-live="polite"></p>
