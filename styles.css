@@ -83,16 +83,25 @@ label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; color: #e4
   border-radius: 12px;
   background: #111318;
 }
-.section-title { margin: 0; font-size: 1rem; color: #86efac; }
+.section-title {
+  margin: 0;
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #86efac;
+}
 .field-help { color: var(--muted); font-size: .82rem; font-weight: 500; }
 
-.quick-fill-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
+.quick-fill-field { display: grid; gap: 10px; }
+.quick-fill-header {
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.quick-fill-field { display: grid; gap: 8px; }
+.quick-fill-header label { gap: 0; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -106,16 +115,21 @@ label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; color: #e4
 }
 
 .btn-quick-fill {
-  border: 1px solid #2f6f47;
-  background: #1f2937;
+  border: 1px solid rgba(74, 222, 128, .28);
+  background: rgba(134, 239, 172, .08);
   color: #dcfce7;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: .82rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  min-height: 38px;
+  font-size: .78rem;
   font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
 }
-.btn-quick-fill:hover { border-color: #4ade80; }
+.btn-quick-fill:hover {
+  border-color: rgba(74, 222, 128, .52);
+  background: rgba(134, 239, 172, .14);
+}
 
 input, select, textarea {
   width: 100%; border: 1px solid var(--border); border-radius: 10px;
@@ -173,7 +187,10 @@ input::placeholder, textarea::placeholder { color: #71717a; }
   .btn { width: 100%; }
   .hero-actions { flex-direction: column; }
   form { padding: 16px; }
-  .quick-fill-row { grid-template-columns: 1fr; }
-  .btn-quick-fill { width: 100%; }
+  .quick-fill-header { align-items: stretch; }
+  .quick-fill-header .btn-quick-fill {
+    width: 100%;
+    justify-content: center;
+  }
   .footer-bottom { min-height: auto; padding: 14px 0 18px; }
 }
