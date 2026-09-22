@@ -2,7 +2,7 @@
 
 Mobile-first website for **Bulkachuwa Delivery** (Maiduguri).
 
-Live domain: [https://bulkachuwa.delivery](https://bulkachuwa.delivery)
+Live site: [https://bulkachuwa.delivery](https://bulkachuwa.delivery)
 
 - Delivery request form (Formspree)
 - WhatsApp button with a prefilled request message

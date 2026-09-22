@@ -2,7 +2,7 @@
   "name": "Bulkachuwa Delivery",
   "short_name": "Bulkachuwa",
   "description": "Fast pickup and delivery in Maiduguri.",
-  "start_url": "/",
+  "start_url": "https://bulkachuwa.delivery/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0b",
@@ -10,28 +10,19 @@
   "lang": "en-NG",
   "icons": [
     {
-      "src": "android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "src": "https://bulkachuwa.delivery/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
     },
     {
       "src": "android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     }
   ]
 }
