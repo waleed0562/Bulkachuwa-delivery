@@ -22,8 +22,7 @@ Logo and icons:
 ## Google Search Console + domain
 
 1. Buy / point **bulkachuwa.delivery** at this GitHub Pages site.
-2. In the repo: **Settings → Pages → Custom domain** should show `bulkachuwa.delivery` (the `CNAME` file is already in the repo).
-3. At your domain registrar, add GitHub Pages DNS:
+2. At your domain registrar, add GitHub Pages DNS:
 
    **A records** for `@` / apex:
 
@@ -34,6 +33,7 @@ Logo and icons:
 
    Optional **CNAME** for `www` → `waleed0562.github.io`
 
+3. Then in the repo: **Settings → Pages → Custom domain** → enter `bulkachuwa.delivery` (this creates the `CNAME` file). Do this only after DNS is set, or the current GitHub Pages link will redirect to a domain that is not live yet.
 4. Wait for HTTPS to turn green in Pages settings.
 5. Open [Google Search Console](https://search.google.com/search-console), add a **Domain** property for `bulkachuwa.delivery`, and verify with the DNS TXT record Google gives you (best method for this domain).
 6. After verification, submit `https://bulkachuwa.delivery/sitemap.xml`.
