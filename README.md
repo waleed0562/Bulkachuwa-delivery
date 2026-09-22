@@ -1,43 +1,55 @@
-# Gidan Sauki Delivery Website
+# Bulkachuwa Delivery
 
-Simple, mobile-first website for **Gidan Sauki Delivery** with:
+Mobile-first website for **Bulkachuwa Delivery** (Maiduguri).
 
-- Delivery request form
-- Email submission via Formspree
-- WhatsApp button with prefilled message template
+Live domain: [https://bulkachuwa.delivery](https://bulkachuwa.delivery)
 
-## Quick Setup
+- Delivery request form (Formspree)
+- WhatsApp button with a prefilled request message
+- SEO, Open Graph, favicons, and sitemap ready for Google Search Console
 
-1. Open `index.html`
-2. Find this line and replace with your real Formspree form ID:
+## Branding
 
-```html
-action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-```
+All public copy uses **Bulkachuwa Delivery** (formerly Gidan Sauki).
 
-3. Open `script.js`
-4. Replace the WhatsApp number:
+Logo and icons:
 
-```js
-const WHATSAPP_NUMBER = "2348000000000";
-```
+- Header / footer: `asset/logo-header.webp` (small, fast)
+- Full logo: `asset/logo.jpeg`
+- Share / Google image: `asset/og-image.jpg`
+- Favicons: `favicon.ico`, `apple-touch-icon.png`, and every file in `asset/favicon_io/`
 
-Use format: `countrycode + number` with no `+` and no spaces.
+## Google Search Console + domain
 
-Example: `2348012345678`
+1. Buy / point **bulkachuwa.delivery** at this GitHub Pages site.
+2. In the repo: **Settings → Pages → Custom domain** should show `bulkachuwa.delivery` (the `CNAME` file is already in the repo).
+3. At your domain registrar, add GitHub Pages DNS:
 
-## Run locally
+   **A records** for `@` / apex:
 
-Just open `index.html` in your browser.
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
 
-## Deploy
+   Optional **CNAME** for `www` → `waleed0562.github.io`
 
-You can deploy quickly with:
-- GitHub Pages
-- Netlify
-- Vercel
+4. Wait for HTTPS to turn green in Pages settings.
+5. Open [Google Search Console](https://search.google.com/search-console), add a **Domain** property for `bulkachuwa.delivery`, and verify with the DNS TXT record Google gives you (best method for this domain).
+6. After verification, submit `https://bulkachuwa.delivery/sitemap.xml`.
 
-## Notes
+If Search Console instead gives an HTML `<meta>` tag, paste it into `index.html` where the Google Search Console comment is.
 
-- The form submits to Formspree and sends to your email once Formspree is connected.
-- The WhatsApp button opens chat with a pre-typed template users can edit and send.
+Already on the site for Google / link previews:
+
+- Canonical URL
+- `robots.txt` + `sitemap.xml`
+- Open Graph + Twitter card (`asset/og-image.jpg`)
+- JSON-LD LocalBusiness schema
+- Full favicon set (16, 32, 180, 192, 512, ico, manifest)
+
+## Local preview
+
+Open `index.html` in a browser, or serve the folder with any static server.
+
+Formspree form ID and WhatsApp number are already set in `index.html` / `script.js`.

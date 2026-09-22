@@ -33,11 +33,26 @@ html, body {
 
 .nav-wrap {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; min-height: 72px;
+  gap: 16px; min-height: 76px;
 }
 
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
-.brand-dot { width: 14px; height: 14px; border-radius: 999px; background: var(--primary); }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: inherit;
+}
+.brand-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  background: #f6f2e9;
+}
+.brand-logo-footer { height: 64px; }
 
 h1 { font-size: clamp(1.95rem, 3vw, 3.1rem); line-height: 1.12; margin: 12px 0 16px; }
 h2 { font-size: clamp(1.45rem, 2vw, 2.05rem); margin: 0 0 12px; line-height: 1.25; }
@@ -142,6 +157,16 @@ label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; color: #e4
   outline: 2px solid rgba(134, 239, 172, .55);
   outline-offset: 2px;
 }
+.scheduled-field[hidden] { display: none !important; }
+.form-status {
+  min-height: 1.2em;
+  margin: 8px 0 0;
+  font-size: .92rem;
+  font-weight: 600;
+}
+.form-status.is-success { color: #86efac; }
+.form-status.is-error { color: #fca5a5; }
+.btn:disabled { opacity: .65; cursor: not-allowed; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -206,7 +231,8 @@ input::placeholder, textarea::placeholder { color: #71717a; }
   .footer-main { gap: 18px; padding-top: 36px; }
 }
 @media (max-width: 520px) {
-  .nav-wrap { min-height: 66px; }
+  .nav-wrap { min-height: 70px; }
+  .brand-logo { height: 44px; }
   .btn { width: 100%; }
   .hero-actions { flex-direction: column; }
   form { padding: 16px; }
