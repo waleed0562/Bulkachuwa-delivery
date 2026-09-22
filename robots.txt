@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://bulkachuwa.delivery/sitemap.txt
 Sitemap: https://bulkachuwa.delivery/sitemap.xml
-Host: https://bulkachuwa.delivery
