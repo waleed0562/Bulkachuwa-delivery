@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
 Sitemap: https://bulkachuwa.delivery/sitemap.txt
 Sitemap: https://bulkachuwa.delivery/sitemap.xml
