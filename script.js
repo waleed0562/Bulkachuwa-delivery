@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "2348146107740";
+const WHATSAPP_NUMBER = "2349077881301";
 const deliveryForm = document.getElementById("delivery-form");
 
 const getFieldValue = (name) => {
